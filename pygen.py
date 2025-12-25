@@ -15,6 +15,10 @@ def pdfgen(data):
         pdf.add_page()
         pdf.cell(txt=row["Topic"], w=10, h=10, ln=1, align='L', border=0)
         pdf.line(10,20,200,20)
+        y1=20
+        while y1 < 270:
+            y1 +=10
+            pdf.line(10, y1, 200, y1)
         #footer
         pdf.ln(260)
         pdf.set_font('Times', 'I', size=8)
@@ -22,6 +26,10 @@ def pdfgen(data):
         pdf.cell(w=0, h=0, ln=1, align='R', border=0, txt=row["Topic"])
         for i in range(int(row["Pages"])-1):
             pdf.add_page()
+            y1 = 10
+            while y1 < 280:
+                y1 += 10
+                pdf.line(10, y1, 200, y1)
             #footer
             pdf.ln(277)
             pdf.set_font('Times', 'I', size=8)
